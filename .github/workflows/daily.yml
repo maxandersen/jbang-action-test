@@ -24,4 +24,18 @@ jobs:
       - name: env
         run: |
           jbang properties@jbangdev
+  java21:
+      runs-on: ubuntu-latest
+      steps:
+      - name: java 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '20'
+          distribution: 'temurin'
+      - name: jbang
+        uses: jbangdev/setup-jbang@main    
+      - name: complexhelloworld
+        run: |
+          jbang properties@jbangdev java
+        
         
