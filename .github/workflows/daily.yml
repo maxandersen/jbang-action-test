@@ -1,0 +1,27 @@
+
+name: Test JBang
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: jbang
+        uses: jbangdev/setup-jbang@main  
+      - name: env
+        run: |
+          jbang properties@jbangdev
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: jbang
+        uses: jbangdev/setup-jbang@main  
+      - name: env
+        run: |
+          jbang properties@jbangdev
+        
